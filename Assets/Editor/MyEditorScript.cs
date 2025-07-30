@@ -1,8 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEditor;
+using UnityEngine;
 
 class MyEditorScript
 {
@@ -12,7 +12,6 @@ class MyEditorScript
     {
         BuildPipeline.BuildPlayer(FindEnabledEditorScenes(), "Builds/Windows/MyGame.exe", BuildTarget.StandaloneWindows, BuildOptions.None);
     }
-
     private static string[] FindEnabledEditorScenes()
     {
         List<string> EditorScenes = new List<string>();
@@ -21,7 +20,6 @@ class MyEditorScript
             if (!scene.enabled) continue;
             EditorScenes.Add(scene.path);
         }
-
         return EditorScenes.ToArray();
     }
 }
